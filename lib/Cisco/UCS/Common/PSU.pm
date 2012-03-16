@@ -6,7 +6,7 @@ use strict;
 use Carp qw(croak);
 use Scalar::Util qw(weaken);
 
-our $VERSION	= '0.1';
+our $VERSION	= '0.11';
 
 our @ATTRIBUTES	= qw(dn id model operability power presence revision serial thermal vendor voltage);
 
@@ -21,10 +21,6 @@ Cisco::UCS::Common::PSU - Class for operations with a Cisco UCS PSU.
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
-
     foreach my $psu (sort $ucs->chassis(1)->get_psus) {
       print 'PSU ' . $psu->id . ' voltage: ' . $psu->voltage . "\n" 
     }
@@ -33,6 +29,13 @@ Perhaps a little code snippet.
     # PSU 2 voltage: ok
     # PSU 3 voltage: ok
     # PSU 4 voltage: ok
+
+=head1 DESCRIPTION
+
+Cisco::UCS::Common::PSU is a class providing common operations with a Cisco UCS PSU.
+
+Note that you are not supposed to call the constructor yourself, rather a Cisco::UCS::Common::PSU
+object is created for you automatically by query methods in other classes like L<Cisco::UCS::Chassis>.
 
 =head1 METHODS
 
